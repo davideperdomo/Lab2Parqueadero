@@ -59,8 +59,16 @@ public class Parqueaderolab {
             }
         }
         //leerdatos
+        int rep;
+        do{
+           
+        int men;
         java.util.Scanner lectura
                 = new java.util.Scanner(System.in);
+        System.out.println("Digite 0 si ingresa automovil, o Digite 1 si sale automovil."); 
+        men = lectura.nextInt();
+        switch(men){
+            case 0:
         System.out.println("Ingrese la hora(solo hora)");
         horaing = lectura.nextInt();
         System.out.println("Ingrese minutos");
@@ -112,7 +120,9 @@ public class Parqueaderolab {
                 System.out.println("Debe parquearse en la posicion: " + B5[i][j]);
                 break;
         }
-        //     
+        break;
+        // 
+            case 1:
         String placaing;
         int hora = 0, min = 0;
         int horasal, minsal;
@@ -120,8 +130,10 @@ public class Parqueaderolab {
         horasal = lectura.nextInt();
         System.out.println("Ingrese minutos");
         minsal = lectura.nextInt();
+        java.util.Scanner sc2
+                = new java.util.Scanner(System.in);
         System.out.println("Ingrese la PLACA del automovil que va a salir");
-        placaing = sc.nextLine();
+        placaing = sc2.nextLine();
         for (i = 0; i < 24; i = i + 1) {
             if (A4[i] == placaing) {
                 hora = A2[i];
@@ -142,8 +154,16 @@ public class Parqueaderolab {
         t = horat + mint;
         din = t * 66;
         System.out.println("Debe pagar: " + din + "pesos");
-        //
         dintotal=dintotal+din;
+        break;
+        }
+        
+        System.out.println("Digite 1 si desee acceder al menu principal");
+        rep= lectura.nextInt();
+        }while(rep==1);
+        //
+       
+        
         puestosLibres(A5, B5);
         
         
